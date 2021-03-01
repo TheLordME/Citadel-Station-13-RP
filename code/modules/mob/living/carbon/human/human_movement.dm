@@ -144,7 +144,7 @@
 
 	if(T.movement_cost)
 		var/turf_move_cost = T.movement_cost
-		if(istype(T, /turf/simulated/floor/water))
+		if(istype(T, /turf/simulated/floor/outdoors/water))
 			if(species.water_movement)
 				turf_move_cost = clamp(HUMAN_LOWEST_SLOWDOWN, turf_move_cost + species.water_movement, 15)
 			if(shoes)
@@ -225,6 +225,8 @@
 
 // Handle footstep sounds
 /mob/living/carbon/human/handle_footstep(var/turf/T)
+	if(is_incorporeal())
+		return
 	if(!config_legacy.footstep_volume || !T.footstep_sounds || !T.footstep_sounds.len)
 		return
 	// Future Upgrades - Multi species support

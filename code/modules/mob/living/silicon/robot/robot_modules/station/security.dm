@@ -24,7 +24,9 @@
 					"Insekt" = "insekt-Sec",
 					"Misato" = "tall2security",
 					"L3P1-D0T" = "Glitterfly-Security",
-					"Miss M" = "miss-security"
+					"Miss M" = "miss-security",
+					"Coffcurity" = "coffin-Combat"
+
 					)
 
 /obj/item/robot_module/robot/security/general/New()
@@ -126,7 +128,7 @@
 	R.verbs |= /mob/living/proc/shred_limb
 	R.verbs |= /mob/living/silicon/robot/proc/rest_style
 
-	if(R.client && R.client.ckey in list("nezuli"))
+	if(R.client && (R.client.ckey in list("nezuli")))
 		sprites += "Alina"
 		sprites["Alina"] = "alina-sec"
 

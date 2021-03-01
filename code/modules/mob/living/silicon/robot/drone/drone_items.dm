@@ -29,9 +29,9 @@
 	var/force_holder = null //
 
 /obj/item/gripper/examine(mob/user)
-	..()
+	. = ..()
 	if(wrapped)
-		to_chat(user, "<span class='notice'>\The [src] is holding \the [wrapped].</span>")
+		. += "<span class='notice'>\The [src] is holding \the [wrapped].</span>"
 		wrapped.examine(user)
 
 /obj/item/gripper/CtrlClick(mob/user)
@@ -94,7 +94,8 @@
 		/obj/item/storage/pill_bottle,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/blood,
-		/obj/item/stack/material/phoron
+		/obj/item/stack/material/phoron,
+		/obj/item/nif
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -119,7 +120,8 @@
 		/obj/item/disposable_teleporter/slime,
 		/obj/item/slimepotion,
 		/obj/item/slime_extract,
-		/obj/item/reagent_containers/food/snacks/monkeycube
+		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/nif
 
 		)
 
