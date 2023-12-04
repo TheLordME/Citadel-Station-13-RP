@@ -10,3 +10,4 @@
  *
  */
 
+///obj/item/clothing/suit
